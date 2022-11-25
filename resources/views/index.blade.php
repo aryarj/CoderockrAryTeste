@@ -25,7 +25,7 @@
             <td>{{$i['initialdate']}}</td>
             <td>{{$c[$count]}}</td>
             <td>R${{$transport[$count]}}</td>
-            <td>R${{round(($transport[$count]-$i['valorInicial'])*$transportNet[$count]+$i['valorInicial'],2)}}</td>
+            <td>R${{$transportNet2[$count]}}</td>
         </tr>
         {{$count=$count+1}}
         @endforeach
@@ -39,10 +39,11 @@
             
                 <li>id:{{$i['id']}} - {{$i['nome']}} - R$ {{$i['valorInicial']}} - 
                      {{$i['initialdate']}} - {{$c[$count]}} - R${{$transport[$count]}} 
-                     - R${{round(($transport[$count]-$i['valorInicial'])*$transportNet[$count]+$i['valorInicial'],2)}}</li>
+                     - R${{$transportNet2[$count]}}</li>
                      {{$count=$count+1}}  
         @endforeach
         
+        
 </ul>-->
-
+<p>Gross sum: {{$sumGross}} - Net sum: {{$sumNet}} - Taxes sum: {{$sumTaxes}}</p>
 @endsection
