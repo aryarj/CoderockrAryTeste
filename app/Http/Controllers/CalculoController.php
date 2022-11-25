@@ -58,18 +58,21 @@ class CalculoController extends Controller
 
         //net values sum
         $sumNet=0;
+        $sumInitialValues=0;
         for($i=0; $i<count($transport);$i++)
         {
             // getting the net values
             $transportNet2[]=round(($transport[$i]-$initialValues[$i])*$transportNet[$i]+$initialValues[$i],2);
             // the sum of net values
             $sumNet+=$transportNet2[$i];
+            $sumInitialValues+=$initialValues[$i];
         }
 
         //taxes sum
         $sumTaxes=$sumGross-$sumNet;
 
-        return view('index',compact(['investors','transport','transportNet2','c','sumGross','sumNet','sumTaxes']));
+        return view('index',compact(['investors','transport','transportNet2','c','sumGross',
+        'sumNet','sumTaxes','sumInitialValues']));
     }
     
     

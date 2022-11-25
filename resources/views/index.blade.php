@@ -45,5 +45,5 @@
         
         
 </ul>-->
-<p>Gross sum: {{$sumGross}} - Net sum: {{$sumNet}} - Taxes sum: {{$sumTaxes}}</p>
+<p>Total values: Gross: {{$sumGross}} - Net: {{$sumNet}} - Initial application: {{$sumInitialValues}} - Taxes : {{$sumTaxes}}</p>
 @endsection
